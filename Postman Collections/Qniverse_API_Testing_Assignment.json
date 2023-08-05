@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "48bb8ebc-7fd5-4228-b2a6-a3c095183ea1",
+		"name": "Qniverse Assignment - Reqres.in Api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get list of users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f955dd6-ccc0-4f54-802c-cd8c8154bb88",
+								"exec": [
+									"pm.test(\"Retrive list of users\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5bb543f7-0dbf-44f4-9127-ce02d4c0b4a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get single of user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6e2924f-585e-4edf-b6be-5dd18da7b0a9",
+								"exec": [
+									"",
+									"",
+									"pm.test(\"Retreive a user by id.\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response data should have 'data' property.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('data');",
+									"});",
+									"",
+									"pm.test(\"Data object should have 'id' property of type integer.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.id).to.be.a('number');",
+									"});",
+									"",
+									"pm.test(\"Data object should have 'email' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.email).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Data object should have 'first_name' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.first_name).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Data object should have 'last_name' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.last_name).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Data object should have 'avatar' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.avatar).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Response data should have 'support' property.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('support');",
+									"});",
+									"",
+									"pm.test(\"Support object should have 'url' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.support.url).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Support object should have 'text' property of type string.\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.support.text).to.be.a('string');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "17799b40-ada9-4259-b569-e5b6831b9ee7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User not found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4cd94b8f-6a86-49c7-a2c9-5a188a08decf",
+								"exec": [
+									"pm.test(\"Retreive a single user that do not exist/not found.\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "70048801-430c-419f-942c-63644f266b04",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/users/23"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "90078042-7181-4bcd-a5bb-47c24b375c3f",
+								"exec": [
+									"pm.test(\"Create a user.\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "51918b1f-1e3c-4973-b075-fb4b2ce73e89",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user using PUT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d54f59de-2158-4a0c-807c-067041d6b7fe",
+								"exec": [
+									"pm.test(\"Update a user using PUT request.\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "c654a592-7f9f-4572-9189-afe08afc1cb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"zion resident\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "283",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user using PATCH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d004cb6c-a450-4d52-a9d4-23d2c3937a31",
+								"exec": [
+									"pm.test(\"Update a user using Patch request.\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "e0810448-2314-4c7c-889b-492f31cf54ec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"morpheus\",\n    \"job\": \"zion resident\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "59ea2305-6086-4d26-906c-a2c81678aa6d"
+		}
+	]
+}
