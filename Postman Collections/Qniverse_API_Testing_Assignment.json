@@ -24,7 +24,7 @@
 							}
 						}
 					],
-					"_postman_id": "5bb543f7-0dbf-44f4-9127-ce02d4c0b4a5",
+					"id": "5bb543f7-0dbf-44f4-9127-ce02d4c0b4a5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -104,7 +104,7 @@
 							}
 						}
 					],
-					"_postman_id": "17799b40-ada9-4259-b569-e5b6831b9ee7",
+					"id": "17799b40-ada9-4259-b569-e5b6831b9ee7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -130,8 +130,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2",
-									"type": "string"
+									"value": "2"
 								}
 							]
 						}
@@ -154,7 +153,7 @@
 							}
 						}
 					],
-					"_postman_id": "70048801-430c-419f-942c-63644f266b04",
+					"id": "70048801-430c-419f-942c-63644f266b04",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -187,7 +186,7 @@
 							}
 						}
 					],
-					"_postman_id": "51918b1f-1e3c-4973-b075-fb4b2ce73e89",
+					"id": "51918b1f-1e3c-4973-b075-fb4b2ce73e89",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -229,7 +228,7 @@
 							}
 						}
 					],
-					"_postman_id": "c654a592-7f9f-4572-9189-afe08afc1cb9",
+					"id": "c654a592-7f9f-4572-9189-afe08afc1cb9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -264,8 +263,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "283",
-									"type": "string"
+									"value": "283"
 								}
 							]
 						}
@@ -288,7 +286,7 @@
 							}
 						}
 					],
-					"_postman_id": "e0810448-2314-4c7c-889b-492f31cf54ec",
+					"id": "e0810448-2314-4c7c-889b-492f31cf54ec",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -323,8 +321,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2",
-									"type": "string"
+									"value": "2"
 								}
 							]
 						}
@@ -332,7 +329,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "59ea2305-6086-4d26-906c-a2c81678aa6d"
+			"id": "59ea2305-6086-4d26-906c-a2c81678aa6d"
 		}
 	]
 }
